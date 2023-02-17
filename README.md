@@ -1,5 +1,5 @@
-<h1 align="center">LIBRERÍA DE COMPLEJOS</h1>
-<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKO_u5IerRydQSZu4WdilrqjAwnip2QaOQdgfOvDVXQTB7BgENjbcn9e4SG__pSQ0j-mKDLE4GIxlFluVEsM8bBHxyhL7bI5_VXiIpUacA2Lr-TOgen4MN12WSYV07Za1miunMWrzUFdR9QUThaGSdDiNNHULHL6w0Pjd34gpLsWnrjKr1flQPyA/s16000/Complex.png" alt="" class="Complex">
+<h1 align="center">LIBRERÍA DE MATRICES Y VECTORES COMPLEJOS</h1>
+<img src="[https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjKO_u5IerRydQSZu4WdilrqjAwnip2QaOQdgfOvDVXQTB7BgENjbcn9e4SG__pSQ0j-mKDLE4GIxlFluVEsM8bBHxyhL7bI5_VXiIpUacA2Lr-TOgen4MN12WSYV07Za1miunMWrzUFdR9QUThaGSdDiNNHULHL6w0Pjd34gpLsWnrjKr1flQPyA/s16000/Complex.png](https://blogger.googleusercontent.com/img/a/AVvXsEggS7Aj9h4uMSKmUpqERD0VevEgV6XIiSJLMrjFjWFi19A9Hsa7-jEo8a72DQXebw6xLE6Vh315e0Juba2hFkWYVcrfiRV6TrmAXf6xXUkeWG6H0RNrgn_sZi3mvpTeP1isfhgUvlHtAFS8ArSFA9LgNXfLYNbT2OKuYuQiOggxoO9U8daQk-l1LQ=s16000)" alt="" class="Complex">
 
 `Esta librería de números complejos evidencia algunas de las operaciones fundamentales de este conjunto de números y sus notaciones.` <br>
 `Algunos de los aspectos más relevantes de este trabajo son:` <br><br>
