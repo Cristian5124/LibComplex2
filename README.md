@@ -10,83 +10,147 @@
 
 <h2 align="left">Código Fuente</h2>
 
-    import math
+    import numpy as np
+    def sumavectcomplex(a,b):
+        tam=len(a)
+        suma=[ 0+0j for i in range(tam)]
+        cont=0
 
-    def sumacomplex(c1,c2):
-        real=c1[0]+c2[0]
-        img=c1[1]+c2[1]
-        resultado=(real,img)
-        return resultado
+        while(cont<tam):
+            suma[cont]=a[cont]+b[cont]
+            cont+=1
+        return suma
 
-    def multcomplex(c1,c2):
-        real=((c1[0]*c2[0])-(c1[1]*c2[1]))
-        img=(c1[0]*c2[1])+(c1[1]*c2[0])
-        resultado=(real,img)
-        return resultado
+    def inversoaddvect(a):
+        tam=len(a)
+        inv=[ 0+0j for i in range(tam)]
+        cont=0
 
-    def restacomplex(c1,c2):
-        real=c1[0]-c2[0]
-        img=c1[1]-c2[1]
-        resultado=(real,img)
-        return resultado
+        while(cont<tam):
+            inv[cont]=-a[cont]
+            cont+=1
+        return inv
 
-    def divcomplex(c1,c2):
-        c3=(c2[0],-c2[1])
-        realnum=(c1[0]*c3[0])-(c1[1]*c3[1])
-        imgnum=(c1[0]*c3[1])+(c1[1]*c3[0])
-        realdenom=(c2[0]*c3[0])-(c2[1]*c3[1])
-        resultadodiv=(realnum,imgnum,realdenom)
-        return resultadodiv
+    def escalarxvector(k,a):
+        tam=len(a)
+        mult=[ 0+0j for i in range(tam)]
+        cont=0
 
-    def modulocomplex(c):
-        modu=round((c[0]**2+c[1]**2)**(0.5),6)
-        return modu
+        while(cont<tam):
+            mult[cont]=a[cont]*k
+            cont+=1
+        return mult
 
-    def conjugadocomplex(c):
-        return (c[0],-c[1])
+    def addmatrizvcomplex(c,d):
+        if(len(c)==len(d) and len(c[0])==len(d[0])):
+            suma=[]
+            filas=len(c)
+            columnas=len(c[0])
+            for x in range(filas):
+                suma.append( [0] * columnas)
+            for h in range(filas):
+                for k in range(columnas):suma[h][k]+=c[h][k]+d[h][k]
+        return suma
 
-    def fasecomplex(c):
-        if(c[0]!=0):
-            fase=math.degrees(math.atan((c[1])/(c[0])))
-            if(c[0]<0 and c[1]>0):
-                fase+=180
-            if(c[0]<0 and c[1]<0):
-                fase-=180
-            fase=round(fase,6)
-        else:
-            if(c[1]==0):
-                fase=0
-            elif(c[1]>0):
-                fase=90
-            elif(c[1]<0):
-                fase=270
-        return fase
+    def invaddmatrizcomplex(e):
+        matriz = np.matrix(e)
+        invadd = np.linalg.inv(matriz)
+        return invadd
 
-    def polarcomplex(c):
-        modu=modulocomplex(c)
-        fase=fasecomplex(c)
-        resultado=(modu,fase)
-        return resultado
+    def escxmatrizcomplex(k,c):
+        matriz = np.matrix(c)
+        return matriz*k
 
-    def printpolarcomplex(modu,fase):
-        print(f'{modu} ({fase}°)')
+    def traspmatriz(f):
+        traspmatriz = np.transpose(f)
+        return traspmatriz
 
-    def printcomplex(c):
-        print("{} + {}i".format(c[0],c[1]))
+    def conjugmatriz(f):
+        return np.conj(f)
 
-    def printdivcomplex(c):
-        print(f"({c[0]} / {c[2]}) + ({c[1]} / {c[2]}) i")
+    def adjmatriz(f):
+        trasp = traspmatriz(f)
+        adj = conjugmatriz(trasp)
+        return adj
 
-    if __name__ == '__main__':
-        printcomplex((7,-4))
-        printcomplex(sumacomplex((3,-8),(4,6)))
-        printcomplex(multcomplex((2,-3),(-1,1)))
-        printcomplex(restacomplex((1,-1),(-2,-5)))
-        print(modulocomplex((-2,-3)))
-        printdivcomplex(divcomplex((3,2),(-1,2)))
-        print(conjugadocomplex((7,-4)))
-        fase=fasecomplex((7,-4))
-        print(f'{fase}°')
-        print(polarcomplex((7,-4)))
+    def prod2matrices(e,g):
+        return np.matmul(e,g)
+
+    def prodintvect(a,b):
+        return np.dot(a,b)
+
+    def normavector(a):
+        return round(np.linalg.norm(a),5)
+
+    def dist2vectores(a,b):
+        a = np.array(a)
+        b = np.array(b)
+        return round(np.linalg.norm(a-b),5)
+
+    def matrizunit(g):
+        for i in range(len(g)):
+            for j in range (len(g[0])):
+                if i==j and (g[i][j]!=1 or g[i][j]!=j):
+                    return 'No es una matriz unitaria.'
+                elif i!=j and g[i][j]!=0:
+                    return 'Si es una matriz unitaria.'
+        return True
+
+    def valpropmatriz(g):
+        g=np.array(g)
+        valpropio = np.linalg.eigvals(g)
+        print(f'Valores propios: {valpropio}')
+        print("")
+        vectorpropio = np.linalg.eig(g)
+        print(f'Vectores propios: {vectorpropio}')
+
+    def prodtensor(a,b):
+        a = np.array(a).reshape(3,1)
+        b = np.array(b).reshape(3,1)
+        return (np.kron(a,b))
+
+    def main():
+        a = [2j,4+1j,3]
+        b = [1+2j,-2+1j,3.5j]
+        c = [[2j,4+1j,3],[1+2j,-2+1j,3.5j]]
+        d = [[7-4j,4+5j,4],[10-3j,-1+2j,4-3j]]
+        e = [[1+3j,2j-1],[-3j+8,7-1j]]
+        f = [[1+1j,2j-2,3j+1],[1j-6,3-2j,-1j+2],[2j,0,1+3j]]
+        g = [[2-3j,1j+3],[4+8j,2j-1]]
+
+        print(sumavectcomplex(a,b))
+        print("")
+        print(inversoaddvect(a))
+        print("")
+        print(escalarxvector(2+3j,a))
+        print("")
+        print(addmatrizvcomplex(c, d))
+        print("")
+        print(invaddmatrizcomplex(e))
+        print("")
+        print(escxmatrizcomplex(2,c))
+        print("")
+        print(traspmatriz(f))
+        print("")
+        print(conjugmatriz(f))
+        print("")
+        print(adjmatriz(f))
+        print("")
+        print(prod2matrices(e,g))
+        print("")
+        print(prodintvect(a,b))
+        print("")
+        print(normavector(a))
+        print("")
+        print(dist2vectores(a,b))
+        print("")
+        print(matrizunit(g))
+        print("")
+        valpropmatriz(g)
+        print("")
+        print(prodtensor(a,b))
+        print("")
+
+main()
     
 `Trabajo realizado por el estudiante Cristian David Polo Garrido.`
