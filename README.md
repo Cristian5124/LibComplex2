@@ -1,5 +1,5 @@
 <h1 align="center">LIBRERÍA DE MATRICES Y VECTORES COMPLEJOS</h1>
-<img src="https://cdn.kastatic.org/ka-youtube-converted/cb15vYCJNZY.mp4/cb15vYCJNZY.png" alt="" class="Complex">
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhra9fSfv5wMAxy4hyGbJXLrjLgnuPH2Y3kPRgSrP-4pymm5t5kJPuMKBKGUrxdhzkZXA9SCjag53faV7a_KkxM6gtaLJSlelo4so7d4zJtJg4BAcqzR9isV9MhT0dbJdMlWhplGO_S0RB8T97v-feUAEErvUVtJIorVlX0xUN3_pXINDH49aETig/s16000/a.png" alt="" class="Complex">
 
 `Esta librería de números complejos evidencia algunas de las operaciones fundamentales de este conjunto de números y sus notaciones.` <br>
 `Algunos de los aspectos más relevantes de este trabajo son:` <br><br>
