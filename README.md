@@ -1,7 +1,7 @@
 <h1 align="center">LIBRERÍA DE MATRICES Y VECTORES COMPLEJOS</h1>
 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhra9fSfv5wMAxy4hyGbJXLrjLgnuPH2Y3kPRgSrP-4pymm5t5kJPuMKBKGUrxdhzkZXA9SCjag53faV7a_KkxM6gtaLJSlelo4so7d4zJtJg4BAcqzR9isV9MhT0dbJdMlWhplGO_S0RB8T97v-feUAEErvUVtJIorVlX0xUN3_pXINDH49aETig/s16000/a.png" alt="" class="Complex">
 
-`Esta librería de matrices y vectores de números complejos contiene una cantidad considerable de operaciones entre matrices de este tipo.` <br>
+`Esta librería de matrices y vectores de números complejos contiene una cantidad considerable de operaciones entre ellos.` <br>
 `Algunos de los aspectos más relevantes de este trabajo son:` <br><br>
 ✔️ Órden secuencial de las operaciones (prelación de operaciones). <br>
 ✔️ Utilización de tuplas modificables a cualquier caso de prueba. <br>
