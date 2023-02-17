@@ -4,8 +4,8 @@
 `Esta librería de matrices y vectores de números complejos contiene una cantidad considerable de operaciones entre ellos.` <br>
 `Algunos de los aspectos más relevantes de este trabajo son:` <br><br>
 ✔️ Órden secuencial de las operaciones (prelación de operaciones). <br>
-✔️ Utilización de tuplas modificables a cualquier caso de prueba. <br>
-✔️ Archivo de pruebas que certifica el correcto funcionamiento de la calculadora.
+✔️ Posibilidad de modificar las matrices o vectores para cualquier caso de prueba. <br>
+✔️ Interfaz amigable y respuesta rápida en pantalla al usuario.
 <hr>
 
 <h2 align="left">Código Fuente</h2>
