@@ -87,6 +87,14 @@
         b = np.array(b)
         return round(np.linalg.norm(a-b),5)
 
+    def valpropmatriz(g):
+        g=np.array(g)
+        valpropio = np.linalg.eigvals(g)
+        print(f'Valores propios: {valpropio}')
+        print("")
+        vectorpropio = np.linalg.eig(g)
+        print(f'Vectores propios: {vectorpropio}')
+        
     def matrizunit(g):
         for i in range(len(g)):
             for j in range (len(g[0])):
@@ -95,14 +103,6 @@
                 elif i!=j and g[i][j]!=0:
                     return 'Si es una matriz unitaria.'
         return True
-
-    def valpropmatriz(g):
-        g=np.array(g)
-        valpropio = np.linalg.eigvals(g)
-        print(f'Valores propios: {valpropio}')
-        print("")
-        vectorpropio = np.linalg.eig(g)
-        print(f'Vectores propios: {vectorpropio}')
 
     def prodtensor(a,b):
         a = np.array(a).reshape(3,1)
