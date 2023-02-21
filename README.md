@@ -11,13 +11,14 @@
 <h2 align="left">Código Fuente</h2>
 
     import numpy as np
-    def sumavectcomplex(a,b):
+
+    def sumavectcomplex(a,h):
         tam=len(a)
         suma=[ 0+0j for i in range(tam)]
         cont=0
 
         while(cont<tam):
-            suma[cont]=a[cont]+b[cont]
+            suma[cont]=a[cont]+h[cont]
             cont+=1
         return suma
 
@@ -76,6 +77,11 @@
     def prod2matrices(e,g):
         return np.matmul(e,g)
 
+    def accionmatvec(f,a):
+        if len(f[0])!=len(a):
+            print("No es posible hacer la multiplicación.")
+        return np.dot(f,a)
+
     def prodintvect(a,b):
         return np.dot(a,b)
 
@@ -90,19 +96,22 @@
     def valpropmatriz(g):
         g=np.array(g)
         valpropio = np.linalg.eigvals(g)
-        print(f'Valores propios: {valpropio}')
+        print(f'Valores propios: {valpropio[0]}')
         print("")
         vectorpropio = np.linalg.eig(g)
-        print(f'Vectores propios: {vectorpropio}')
-        
+        print(f'Vectores propios: {vectorpropio[0][1]}')
+
     def matrizunit(g):
         for i in range(len(g)):
             for j in range (len(g[0])):
                 if i==j and (g[i][j]!=1 or g[i][j]!=j):
-                    return 'No es una matriz unitaria.'
+                    return False
                 elif i!=j and g[i][j]!=0:
-                    return 'Si es una matriz unitaria.'
+                    return False
         return True
+
+    def matrizhermitiana(g):
+        return np.allclose(g, np.conjugate(np.transpose(g)))
 
     def prodtensor(a,b):
         a = np.array(a).reshape(3,1)
@@ -117,8 +126,9 @@
         e = [[1+3j,2j-1],[-3j+8,7-1j]]
         f = [[1+1j,2j-2,3j+1],[1j-6,3-2j,-1j+2],[2j,0,1+3j]]
         g = [[2-3j,1j+3],[4+8j,2j-1]]
+        h = [1-3j,0+1j,-2-5j]
 
-        print(sumavectcomplex(a,b))
+        print(sumavectcomplex(a,h))
         print("")
         print(inversoaddvect(a))
         print("")
@@ -138,15 +148,19 @@
         print("")
         print(prod2matrices(e,g))
         print("")
+        print(accionmatvec(f,a))
+        print("")
         print(prodintvect(a,b))
         print("")
         print(normavector(a))
         print("")
         print(dist2vectores(a,b))
         print("")
+        valpropmatriz(g)
+        print("")
         print(matrizunit(g))
         print("")
-        valpropmatriz(g)
+        print(matrizhermitiana(g))
         print("")
         print(prodtensor(a,b))
         print("")
