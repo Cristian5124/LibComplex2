@@ -12,13 +12,13 @@
 
     import numpy as np
 
-    def sumavectcomplex(a,h):
+    def sumavectcomplex(a,b):
         tam=len(a)
         suma=[ 0+0j for i in range(tam)]
         cont=0
 
         while(cont<tam):
-            suma[cont]=a[cont]+h[cont]
+            suma[cont]=a[cont]+b[cont]
             cont+=1
         return suma
 
@@ -32,13 +32,13 @@
             cont+=1
         return inv
 
-    def escalarxvector(k,a):
+    def escalarxvector(k1,a):
         tam=len(a)
         mult=[ 0+0j for i in range(tam)]
         cont=0
 
         while(cont<tam):
-            mult[cont]=a[cont]*k
+            mult[cont]=a[cont]*k1
             cont+=1
         return mult
 
@@ -127,12 +127,14 @@
         f = [[1+1j,2j-2,3j+1],[1j-6,3-2j,-1j+2],[2j,0,1+3j]]
         g = [[2-3j,1j+3],[4+8j,2j-1]]
         h = [1-3j,0+1j,-2-5j]
+        k1 = 2+3j
+        k2 = -3-1j
 
-        print(sumavectcomplex(a,h))
+        print(sumavectcomplex(a,b))
         print("")
-        print(inversoaddvect(a))
+        print(inversoaddvect(b))
         print("")
-        print(escalarxvector(2+3j,a))
+        print(escalarxvector(k1,a))
         print("")
         print(addmatrizvcomplex(c, d))
         print("")
